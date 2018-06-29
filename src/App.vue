@@ -1,28 +1,32 @@
 <template>
+  <!--  ナビゲーションバー  -->
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <router-link tag="a" to="/" class="navbar-item">
+            ISC落し物検索システム
+        </router-link>
+      </div>
+    </nav>
+
+    <!--   メイン   -->
+    <section class="section">
+      <div class="container">
+        <keep-alive>
+          <router-view/>
+        </keep-alive>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
+
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang='sass'>
+  @import 'bulma'
 </style>
